@@ -6,7 +6,7 @@ POST http://localhost:3000/events
 Content-Type: application/json
 
 {
-    "name": "Novo Evento 3",
+    "name": "Novo Evento 4",
     "description": "This is a new event",
     "date": "2017-01-01",
     "price": 100
@@ -41,5 +41,18 @@ POST http://localhost:3000/events/{{eventId}}/spots
 Content-Type: application/json
 
 {
-    "name": "A1"
+    "name": "A5"
+}
+
+###
+@spotName = {{ createSpot.response.body.name }}
+
+###
+POST http://localhost:3000/events/{{eventId}}/reserve
+Content-Type: application/json
+
+{
+    "spots": ["{{ spotName }}"],
+    "ticket_kind": "full",
+    "email": "test@test.com"
 }
