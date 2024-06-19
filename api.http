@@ -6,7 +6,7 @@ POST http://localhost:3000/events
 Content-Type: application/json
 
 {
-    "name": "Novo Evento",
+    "name": "Novo Evento 3",
     "description": "This is a new event",
     "date": "2017-01-01",
     "price": 100
